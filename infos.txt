@@ -1,0 +1,4 @@
+* JS possui tipagem fraca e dinâmica, isso quer dizer que ela pode assumir qualquer valor, em qualquer momento;
+
+
+

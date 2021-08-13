@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicios Gerais</title>
+  <style>
+    #conteudo{
+      padding: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exercícios HTML</h1>
+  </header>
+  <nav>
+    <a href="exercicios/texto1.html">Tipos de textos</a>
+    <br>
+    <a href="exercicios/listas.html">Listas</a>
+    <br>
+    <a href="exercicios/desafioLista.html">Desafio Lista</a>
+    <br>
+    <a href="exercicios/tabela.html">Tabela</a>
+    <br>
+  </nav>
+  <section id="conteudo"></section>
+  <footer>
+    Feito por Thiago Jorge -> Curso Web Moderno
+  </footer>
+  <script>
+    document.querySelectorAll('a').forEach(link => {
+      const conteudo = document.getElementById('conteudo')
+      link.onclick = function(e) {
+        e.preventDefault() // o comportamento default ao clicar é redirect, porém com e.preventDefault() ele evita isso.
+        fetch(link.href) // request ajax
+          .then(resp => resp.text())
+          .then(html => conteudo.innerHTML = html)
+      }
+    })
+  </script>
+</body>
+</html>

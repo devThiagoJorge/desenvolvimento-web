@@ -1,0 +1,50 @@
+<h1>Músicas</h1>
+
+<ul class="tree">
+  <li>
+    <span wm-folder>backend</span> 
+    <ul>
+      <li>
+       <span wm-folder>app</span> 
+        <ul>
+          <li>produto.js</li>
+          <li>cliente.js</li>
+          <li>venda.js</li>
+        </ul>
+      </li>
+      <li>
+        <span wm-folder>configs</span>
+        <ul>
+          <li>rotas.js</li>
+          <li>banco.js</li>
+          <li>enviroments.js</li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+  <li>
+    <span wm-folder>frontend</span>
+    <ul>
+      <li>
+        <span wm-folder>public</span>
+        <ul>
+          <li>app.html</li>
+          <li>style.css</li>
+          <li>js.js</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+  document.querySelectorAll('[wm-folder]').forEach(folder => {
+    folder.onclick = function(e) {
+      const nextChild = folder.nextElementSibling // pega o proximo elemento
+      const display = nextChild.style.display
+      nextChild.style.display = display === 'none' ? 'block' : 'none'
+    }
+  })
+</script>
